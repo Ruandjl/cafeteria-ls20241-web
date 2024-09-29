@@ -1,3 +1,6 @@
+// Este código JavaScript cria e gerencia uma lista de produtos de café, permitindo a exibição desses produtos em cartões na página inicial e em uma tabela na página de cardápio, utilizando o localStorage para armazenar as informações dos produtos e incluindo funcionalidades para adicionar novos produtos através de um formulário, além de manipular o DOM para inserir dinamicamente elementos HTML baseados nos dados dos produtos.
+
+
 let itens = [ // Cria uma lista de itens, onde cada item é um objeto com informações sobre um tipo de café.
   {
     titulo: 'Café Expresso', // O título do primeiro item (Café Expresso).
