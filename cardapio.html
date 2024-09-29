@@ -1,116 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Define o tipo de documento como HTML5 -->
+<html lang="en"> <!-- Define o idioma como inglês -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<head> <!-- Início do cabeçalho da página -->
+  <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Define a escala da página para dispositivos móveis -->
+  <title>Document</title> <!-- Título da página -->
 
-  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/footer.css"> <!-- Link para o arquivo de estilo do rodapé -->
 
   <!-- Bootstrap -->
-  <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Link para o CSS do Bootstrap -->
 
   <!-- Font Awesome -->
-  <link href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  <link href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" /> <!-- Link para os ícones do Font Awesome -->
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" /> <!-- Fonte Roboto do Google Fonts -->
+
   <!-- MDB -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" />
-</head>
+  <link href="./node_modules/mdb-ui-kit/css/mdb.min.css" rel="stylesheet" /> <!-- Link para o CSS do MDB (Material Design for Bootstrap) -->
+</head> <!-- Fim do cabeçalho da página -->
 
-<body>
-  <header>
+<body> <!-- Início do corpo da página -->
+  <header> <!-- Início do cabeçalho da página -->
+    <nav class="navbar navbar-dark bg-dark"> <!-- Barra de navegação escura -->
+      <div class="container-fluid"> <!-- Container que mantém os elementos dentro da barra de navegação -->
+        <a class="navbar-brand" href="index.html">Salento.</a> <!-- Link para a página inicial com a marca -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <!-- Botão de navegação que exibe o menu -->
+          <span class="navbar-toggler-icon"></span> <!-- Ícone de toggler para colapsar/expandir a barra de navegação em dispositivos móveis -->
+        </button> <!-- Fim do botão de navegação -->
+        <div class="collapse navbar-collapse" id="navbarNav"> <!-- Conteúdo que colapsa quando o botão é clicado -->
+          <ul class="navbar-nav"> <!-- Lista de navegação -->
+            <li class="nav-item"> <!-- Item de navegação -->
+              <a class="nav-link active" aria-current="page" href="#">Home</a> <!-- Link ativo para a página inicial -->
+            </li> <!-- Fim do item de navegação -->
+            <li class="nav-item"> <!-- Item de navegação -->
+              <a class="nav-link" href="#">Cardápio</a> <!-- Link para a página do cardápio -->
+            </li> <!-- Fim do item de navegação -->
+          </ul> <!-- Fim da lista de navegação -->
+        </div> <!-- Fim do conteúdo que colapsa -->
+      </div> <!-- Fim do container que mantém os elementos dentro da barra de navegação -->
+    </nav> <!-- Fim da barra de navegação -->
+  </header> <!-- Fim do cabeçalho da página -->
+ 
+  <main> <!-- Início do conteúdo principal da página -->
+    <div class="container"> <!-- Container que mantém o conteúdo centralizado -->
+      <!-- Botão que abre o modal -->
+      <button type="button" class="btn btn-primary m-4" data-bs-toggle="modal" data-bs-target="#produtoModal"> <!-- Botão que abre o modal -->
+        + <!-- Texto do botão -->
+      </button> <!-- Fim do botão que abre o modal -->
 
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Salento.</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Cardápio</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      <!-- Tabela para exibir os produtos -->
+      <table class="table table-light table-hover"> <!-- Tabela com estilos de fundo claro e hover -->
+        <thead> <!-- Cabeçalho da tabela -->
+          <tr> <!-- Linha de cabeçalho -->
+            <th scope="col">#</th> <!-- Coluna para o índice (número) -->
+            <th scope="col">Título</th> <!-- Coluna para o título do produto -->
+            <th scope="col">descricao</th> <!-- Coluna para a descrição do produto -->
+            <th scope="col">alt</th> <!-- Coluna para o atributo "alt" da imagem -->
+            <th scope="col">imagemUrl</th> <!-- Coluna para a URL da imagem do produto -->
+          </tr> <!-- Fim da linha de cabeçalho -->
+        </thead> <!-- Fim do cabeçalho da tabela -->
+        <tbody id="produtosBody"> <!-- Corpo da tabela que será preenchido dinamicamente -->
+        </tbody> <!-- Fim do corpo da tabela -->
+      </table> <!-- Fim da tabela -->
 
-  </header>
-  <main>
-    <div class="container">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary m-4" data-bs-toggle="modal" data-bs-target="#produtoModal">
-        +
-      </button>
-
-      <!-- Modal -->
-      <div class="modal fade" id="produtoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
+      <!-- Modal para adicionar novos produtos -->
+      <div class="modal fade" id="produtoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> <!-- Modal que abre quando o botão é clicado -->
+        <div class="modal-dialog"> <!-- Define o layout do modal -->
+          <div class="modal-content"> <!-- Conteúdo do modal -->
+            <div class="modal-header"> <!-- Cabeçalho do modal -->
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Adição de Item</h1> <!-- Título do modal -->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Botão para fechar o modal -->
+            </div> <! -- Fim do cabeçalho do modal -->
+            <div class="modal-body"> <!-- Corpo do modal -->
+              <form id="form1"> <!-- Formulário para adicionar novos itens -->
+                <div class="mb-3"> <!-- Margem inferior entre os campos -->
+                  <label for="recipient-name" class="col-form-label">Item:</label> <!-- Rótulo para o campo "Item" -->
+                  <input type="text" class="form-control" id="1item"> <!-- Campo de texto para inserir o título do item -->
+                  <label for="recipient-name" class="col-form-label">Descrição:</label> <!-- Rótulo para o campo "Descrição" -->
+                  <input type="text" class="form-control" id="1descricao"> <!-- Campo de texto para inserir a descrição -->
+                  <label for="recipient-name" class="col-form-label">Alt:</label> <!-- Rótulo para o campo "Alt" -->
+                  <input type="text" class="form-control" id="1alt"> <!-- Campo de texto para inserir o atributo "alt" da imagem -->
+                  <label for="recipient-name" class="col-form-label">Img:</label> <!-- Rótulo para o campo "Img" -->
+                  <input type="text" class="form-control" id="1img"> <!-- Campo de texto para inserir a URL da imagem -->
+                </div> <!-- Fim da margem inferior entre os campos -->
+              </form> <!-- Fim do formulário -->
+            </div> <!-- Fim do corpo do modal -->
+            <div class="modal-footer"> <!-- Rodapé do modal -->
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> <!-- Botão para fechar o modal -->
+              <button type="button" class="btn btn-primary" id="save">Save changes</button> <!-- Botão para salvar as mudanças -->
+            </div> <!-- Fim do rodapé do modal -->
+          </div> <!-- Fim do conteúdo do modal -->
         </div>
       </div>
     </div>
   </main>
-  <footer class="text-center bg-body-tertiary">
-    <!-- Grid container -->
-    <div class="container pt-4">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
 
-        <!-- Twitter -->
-        <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
-
-        <!-- Google -->
-        <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
-
-        <!-- Instagram -->
-        <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
-
-        <!-- Linkedin -->
-        <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
-        <!-- Github -->
-        <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+  <footer class="text-center bg-body-tertiary"> <!-- Rodapé centralizado -->
+    <div class="container pt-4"> <!-- Container com espaçamento no topo -->
+      <section class="mb-4"> <!-- Seção para ícones de redes sociais -->
+        <!-- Ícones de redes sociais (Facebook, Twitter, Google, Instagram, LinkedIn, Github) -->
+        <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"><i class="fab fa-linkedin"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
       </section>
-      <!-- Section: Social media -->
     </div>
-    <!-- Grid container -->
 
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);"> <!-- Seção de copyright -->
       © 2020 Copyright:
-      <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a> <!-- Link para o MDBootstrap -->
     </div>
-    <!-- Copyright -->
   </footer>
 
-  <script src="./js/index.js"></script>
-  <script src="./js/datahora.js"></script>
-  <!-- Bootstrap -->
-  <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <script src="./js/index.js"></script> <!-- Script principal do site -->
+  <script src="./js/datahora.js"></script> <!-- Script para a data e hora -->
+  <!-- Scripts do Bootstrap -->
+  <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js" crossorigin="anonymous"></script> <!-- Popper.js -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script> <!-- Bootstrap -->
 
-  <!-- MDB -->
-  <script type="text/javascript" src="./node_modules/mdbootstrap/js/mdb.min.js"></script>
+  <!-- Script do MDB -->
+  <script type="text/javascript" src="./node_modules/mdbootstrap/js/mdb.min.js"></script> <!-- Script do MDB -->
+  <script src="./js/cafeteria.js"></script> <!-- Script customizado para funcionalidades específicas -->
 </body>
 
 </html>

@@ -1,38 +1,42 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');  /* Importa a fonte 'Rubik' do Google Fonts */
 
+/* Estilos para o rodapé */
 footer{
-    font-family: 'Rubik', sans-serif;
-    overflow:hidden; 
-    margin-top: 250px ;
-    background:#262626 ;
-    color: #627482  !important;
-    margin-bottom: 0 ;
-    padding-bottom:0  ;
+    font-family: 'Rubik', sans-serif;  /* Define a fonte 'Rubik' como padrão para o rodapé */
+    overflow:hidden;  /* Evita que o conteúdo do rodapé ultrapasse os limites */
+    margin-top: 250px;  /* Define uma margem superior de 250px */
+    background:#262626;  /* Define a cor de fundo do rodapé como um tom de cinza escuro */
+    color: #627482 !important;  /* Define a cor do texto no rodapé como cinza azulado e usa '!important' para garantir que essa cor prevaleça */
+    margin-bottom: 0;  /* Remove a margem inferior */
+    padding-bottom: 0;  /* Remove o preenchimento inferior */
 }
 
+/* Estilos para a tag 'small', que é usada para textos menores */
 small{
-    font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important; 
+    font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important;  /* Calcula dinamicamente o tamanho da fonte de acordo com a largura da janela (responsivo) */
 }
 
+/* Estilos para elementos com a classe 'bold-text' */
 .bold-text{
-    color: #989c9e !important;
+    color: #989c9e !important;  /* Define a cor do texto como cinza claro e usa '!important' para prevalecer sobre outros estilos */
 }
 
-
+/* Classe para margens personalizadas com base na largura da janela */
 .mt-55{
-    margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important; 
+    margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important;  /* Calcula a margem superior dinamicamente, variando entre 50px e 60px com base na largura da janela */
 }
 
-
+/* Estilos para elementos 'h3' */
 h3{
-    font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important; 
+    font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important;  /* Define o tamanho da fonte dinamicamente, variando entre 34px e 40px com base na largura da janela */
 }
- 
+
+/* Estilos para elementos com a classe 'social' */
 .social{
-    font-size: 21px !important; 
+    font-size: 21px !important;  /* Define o tamanho da fonte para ícones de redes sociais como 21px */
 }
 
+/* Estilos para elementos com a classe 'rights' */
 .rights{
-    font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important; 
+    font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important;  /* Define o tamanho da fonte dinamicamente, variando entre 10px e 12px com base na largura da janela */
 }
-
